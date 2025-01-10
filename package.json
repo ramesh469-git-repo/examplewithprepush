@@ -7,7 +7,7 @@
     "start": "webpack serve --mode development",
     "prepare": "husky",
     "lint": "eslint .",
-     "test": "jest"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
