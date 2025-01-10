@@ -16,9 +16,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
-  "eslintConfig": { 
-    "ignorePatterns": ["dist/"] 
-    } ,
+  "eslintConfig": {
+    "ignorePatterns": [
+      "dist/"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",
@@ -35,5 +37,4 @@
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   }
-  
 }
