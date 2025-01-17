@@ -7,7 +7,7 @@
     "start": "webpack serve --mode development",
     "prepare": "husky",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest --config jest.config.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,20 +19,6 @@
   "eslintConfig": {
     "ignorePatterns": [
       "dist/"
-    ]
-  },
-  "jest": {
-    "testEnvironment": "jest-environment-jsdom",
-    "testMatch": [
-      "**/__tests__/**/*.(js|jsx|ts|tsx)",
-      "**/?(*.)+(spec|test).(js|jsx|ts|tsx)"
-    ],
-    "testPathIgnorePatterns": [
-      "\\webpack.config.js",
-      "\\eslint.config.js",
-      "\\src\\index.js",
-      "\\package.json",
-      "\\package-lock.json"
     ]
   },
   "devDependencies": {
