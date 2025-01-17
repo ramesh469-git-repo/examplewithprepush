@@ -2,6 +2,7 @@
   "name": "examplecontextapi",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development",
