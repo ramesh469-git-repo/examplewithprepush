@@ -7,9 +7,13 @@ module.exports = {
     ],
     coverageReporters: ["json", "lcov", "text", "clover"],
     testEnvironment: "jest-environment-jsdom",
-    "testMatch": [
+    testMatch: [
         "**/__tests__/**/*.(js|jsx|ts|tsx)",
         "**/?(*.)+(spec|test).(js|jsx|ts|tsx)"
       ],
+      moduleNameMapper: {
+        '\\.(css|less)$': 'identity-obj-proxy'
+      },
+      setupFilesAfterEnv: ['<rootDir>/setupTests.js']
   };
   
