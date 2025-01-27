@@ -12,7 +12,13 @@ module.exports = {
         static: { directory: path.resolve(__dirname, 'dist'), },
          compress: true, 
          port: 8080,
+         historyApiFallback: true,
+         
     },
+    optimization: {
+        minimize: false,
+      },
+      devtool:'source-map',
     module: {
         rules: [
             {
