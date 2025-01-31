@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import publicApiService from './services/publicApi.service';
+import PageNotFound from './pageNotFound';
+import { fetchPlacesAction } from './redux/placesAction';
+import { useDispatch } from 'react-redux';
 const Dashboard = () => {
   const [details,setDetails] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(()=>{
     const fetchDetails = async ()=>{
       const data = await publicApiService.getDashboardDetails();
+      console.log(data);
+      dispatch(fetchPlacesAction(data))
       setDetails(data);
     }
     fetchDetails();
@@ -21,15 +27,15 @@ const Dashboard = () => {
       </Row>
       <Row>
 
-      { details && details.map((item)=>( <Col md={4}>
-          <Card className="mb-4">
+      { details ? details.map((item,index)=>( <Col md={4}>
+          <Card key ={`${'item-'+index}`} className="mb-4">
             <Card.Body>
               <Card.Title>{item.name}</Card.Title> 
               <Card.Text>{item.country}</Card.Text>
             </Card.Body>
           </Card>
         </Col>
-        ))
+        )):<PageNotFound/>
   }
         </Row>
         {/* <Col md={4}>
