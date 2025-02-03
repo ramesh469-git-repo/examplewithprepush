@@ -4,7 +4,10 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
 
 trigger:
-- ramesh/addhusky
+- ramesh/AzureConfigure 
+- task: Npm@1
+  inputs:
+    command: 'install'
 
 pool:
   vmImage: ubuntu-latest
@@ -17,5 +20,7 @@ steps:
 
 - script: |
     npm install
+    npm run lint
+    npm run test
     npm run build
   displayName: 'npm install and build'
