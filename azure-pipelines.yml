@@ -5,9 +5,7 @@
 
 trigger:
 - ramesh/AzureConfigure 
-- task: Npm@1
-  inputs:
-    command: 'install'
+
 
 pool:
   vmImage: ubuntu-latest
