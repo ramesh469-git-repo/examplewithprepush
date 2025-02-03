@@ -1,5 +1,5 @@
 export const fetchPlacesAction = (data)=>({
-        type: 'FETCH_PLACES',
+        type: 'FETCH_DATA',
         payload: data
     }
 )
